@@ -1,0 +1,38 @@
+# Secrets: commit .env.example, never the real .env
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+
+# Container runtime data (bind mounts created on the server)
+compose/pihole/etc-pihole/
+compose/pihole/etc-dnsmasq.d/
+compose/jellyfin/config/
+compose/jellyfin/cache/
+compose/**/data/
+**/logs/
+*.log
+
+# Media never belongs in Git
+*.mkv
+*.mp4
+*.avi
+
+# Backups and archives
+*.bak
+*.tar
+*.tar.gz
+*.zip
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
