@@ -16,4 +16,4 @@ Template:
 
 ---
 
-_No entries yet. Likely first candidates: lid-close suspend, fan control on the MacBook, Pi-hole and port 53, Docker bypassing ufw._
+_No entries yet. Likely first candidates: Pi-hole and port 53, Docker bypassing ufw, Quick Sync passthrough for Jellyfin._
