@@ -2,7 +2,7 @@
 
 ## Server
 
-```markdown
+```bash
 sudo apt update
 sudo apt install openssh-server
 sudo systemctl enable --now ssh
@@ -13,7 +13,7 @@ ip addr show # note the Ethernet IP, e.g. 192.168.1.x
 
 Create a key and copy it to the server:
 
-```markdown
+```bash
 ssh-keygen -t ed25519
 ssh-copy-id username@192.168.1.x
 ssh username@192.168.1.x # should log in without a password
@@ -23,13 +23,13 @@ ssh username@192.168.1.x # should log in without a password
 
 On the server, set this in `/etc/ssh/sshd_config`:
 
-```markdown
+```text
 PasswordAuthentication no
 ```
 
 Then restart SSH:
 
-```markdown
+```bash
 sudo systemctl restart ssh
 ```
 
@@ -37,10 +37,10 @@ sudo systemctl restart ssh
 
 Add to `~/.ssh/config` on the Mac:
 
-```markdown
+```text
 Host homelab
-HostName 192.168.1.x
-User yourusername
+    HostName 192.168.1.x
+    User yourusername
 ```
 
 Connect with `ssh homelab`. Once Tailscale is running, use the server's Tailscale IP to connect from anywhere.
